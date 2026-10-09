@@ -120,21 +120,27 @@ The full-history charts are descriptive. Their event markers are not confirmed
 structural breaks or causal estimates. No model transformations, lag selection
 or forecast fitting are performed in Notebook 1.
 
+## Notebook 2 — completed
+
+[Time-series diagnostics](notebooks/02_time_series_diagnostics.ipynb):
+
+- Split the dataset chronologically: training through 2021Q4 and testing
+  from 2022Q1. All analytical diagnostics use training data only.
+- Plotted the training series and inspected ACF/PACF in levels.
+- Applied exploratory STL decomposition with a four-quarter period.
+- Tested levels and candidate transformations using ADF and KPSS.
+- Calculated NPL changes in percentage points and oil/FX log changes ×100,
+  retaining the original levels.
+- Plotted the transformed series and inspected their ACF/PACF.
+- Displayed contemporaneous correlations using 47 training quarters and
+  lagged correlations for lags 0–4 using 43 shared training quarters.
+- Saved seven figures. All 12 code cells executed successfully.
+
+The diagnostics guide candidate model specifications; they do not establish
+causal effects, confirm structural breaks or demonstrate forecast performance.
+VIF, model fitting and chronological validation are reserved for Notebook 3.
+
 ## Planned analysis
-
-### Notebook 2 — time-series diagnostics
-
-Planned file: `02_time_series_diagnostics.ipynb` (currently a working draft).
-
-- Assess stationarity using ADF/KPSS and consider structural-change evidence.
-- Compare candidate levels, logs and changes; do not difference automatically.
-- Inspect quarterly seasonality and ACF/PACF on appropriate candidate series.
-- Examine contemporaneous and lagged correlations, then VIF for actual predictor
-  matrices containing oil, FX and any proposed NPL lags.
-- Restrict model-design diagnostics and break searches to pre-2022 data.
-  Distinguish descriptive mean shifts, break-aware unit-root tests and later
-  regression-coefficient stability tests.
-- Define a small modelling shortlist without declaring a winning specification.
 
 ### Notebook 3 — model fitting and validation
 

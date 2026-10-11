@@ -1,0 +1,1046 @@
+{
+  "input": {
+    "path": "../data/raw/kazakhstan_npl_oil_fx_quarterly.csv",
+    "sha256": "daebba6ab30e8d7960bf8ab4194a494210d899c26e34bc54e441ea78c5198ea0",
+    "columns": [
+      "quarter",
+      "npl",
+      "brent",
+      "usdkzt"
+    ],
+    "total_quarters": 66
+  },
+  "sample": {
+    "start": "2010Q1",
+    "end": "2021Q4",
+    "n": 48,
+    "final_test_start": "2022Q1",
+    "final_test_end": "2026Q2",
+    "final_test_n": 18
+  },
+  "settings": {
+    "alpha": 0.05,
+    "adf_max_lags": 4,
+    "adf_autolag": "BIC",
+    "kpss_nlags": "auto",
+    "acf_pacf_lags": 8,
+    "macro_max_lag": 4,
+    "minimum_break_segment": 8,
+    "za_trim": 0.15
+  },
+  "versions": {
+    "pandas": "2.0.3",
+    "numpy": "1.24.3",
+    "scipy": "1.10.1",
+    "statsmodels": "0.14.0"
+  },
+  "stationarity": [
+    {
+      "series": "npl",
+      "deterministic": "c",
+      "start": "2010Q1",
+      "end": "2021Q4",
+      "n": 48,
+      "adf_stat": -0.4541811752255945,
+      "adf_p": 0.9006518933853899,
+      "adf_lags": 0,
+      "adf_regression_n": 47,
+      "kpss_stat": 0.8464504523108126,
+      "kpss_p_tabulated": 0.01,
+      "kpss_p_display": "<=0.01 (table boundary)",
+      "kpss_lags": 4,
+      "evidence": "supports nonstationarity",
+      "warnings": "The test statistic is outside of the range of p-values available in the\nlook-up table. The actual p-value is smaller than the p-value returned.\n"
+    },
+    {
+      "series": "npl",
+      "deterministic": "ct",
+      "start": "2010Q1",
+      "end": "2021Q4",
+      "n": 48,
+      "adf_stat": -2.5657055348449656,
+      "adf_p": 0.2959265257077759,
+      "adf_lags": 2,
+      "adf_regression_n": 45,
+      "kpss_stat": 0.10305192575296808,
+      "kpss_p_tabulated": 0.1,
+      "kpss_p_display": ">=0.10 (table boundary)",
+      "kpss_lags": 4,
+      "evidence": "inconclusive: neither rejects",
+      "warnings": "The test statistic is outside of the range of p-values available in the\nlook-up table. The actual p-value is greater than the p-value returned.\n"
+    },
+    {
+      "series": "brent",
+      "deterministic": "c",
+      "start": "2010Q1",
+      "end": "2021Q4",
+      "n": 48,
+      "adf_stat": -1.2013088159088814,
+      "adf_p": 0.673032439105213,
+      "adf_lags": 0,
+      "adf_regression_n": 47,
+      "kpss_stat": 0.5839375448112628,
+      "kpss_p_tabulated": 0.02409658683533974,
+      "kpss_p_display": "0.0241",
+      "kpss_lags": 4,
+      "evidence": "supports nonstationarity",
+      "warnings": ""
+    },
+    {
+      "series": "brent",
+      "deterministic": "ct",
+      "start": "2010Q1",
+      "end": "2021Q4",
+      "n": 48,
+      "adf_stat": -1.520864644744636,
+      "adf_p": 0.8218826544145501,
+      "adf_lags": 0,
+      "adf_regression_n": 47,
+      "kpss_stat": 0.11055719307716315,
+      "kpss_p_tabulated": 0.1,
+      "kpss_p_display": ">=0.10 (table boundary)",
+      "kpss_lags": 4,
+      "evidence": "inconclusive: neither rejects",
+      "warnings": "The test statistic is outside of the range of p-values available in the\nlook-up table. The actual p-value is greater than the p-value returned.\n"
+    },
+    {
+      "series": "usdkzt",
+      "deterministic": "c",
+      "start": "2010Q1",
+      "end": "2021Q4",
+      "n": 48,
+      "adf_stat": -0.5713453707131433,
+      "adf_p": 0.8773262413465797,
+      "adf_lags": 1,
+      "adf_regression_n": 46,
+      "kpss_stat": 1.0025440959249066,
+      "kpss_p_tabulated": 0.01,
+      "kpss_p_display": "<=0.01 (table boundary)",
+      "kpss_lags": 4,
+      "evidence": "supports nonstationarity",
+      "warnings": "The test statistic is outside of the range of p-values available in the\nlook-up table. The actual p-value is smaller than the p-value returned.\n"
+    },
+    {
+      "series": "usdkzt",
+      "deterministic": "ct",
+      "start": "2010Q1",
+      "end": "2021Q4",
+      "n": 48,
+      "adf_stat": -3.015354055977436,
+      "adf_p": 0.12783882217485487,
+      "adf_lags": 1,
+      "adf_regression_n": 46,
+      "kpss_stat": 0.11182544261190852,
+      "kpss_p_tabulated": 0.1,
+      "kpss_p_display": ">=0.10 (table boundary)",
+      "kpss_lags": 4,
+      "evidence": "inconclusive: neither rejects",
+      "warnings": "The test statistic is outside of the range of p-values available in the\nlook-up table. The actual p-value is greater than the p-value returned.\n"
+    },
+    {
+      "series": "log_brent",
+      "deterministic": "c",
+      "start": "2010Q1",
+      "end": "2021Q4",
+      "n": 48,
+      "adf_stat": -1.4258528730419724,
+      "adf_p": 0.569821105299763,
+      "adf_lags": 0,
+      "adf_regression_n": 47,
+      "kpss_stat": 0.5499687159674603,
+      "kpss_p_tabulated": 0.0304124513586801,
+      "kpss_p_display": "0.0304",
+      "kpss_lags": 4,
+      "evidence": "supports nonstationarity",
+      "warnings": ""
+    },
+    {
+      "series": "log_brent",
+      "deterministic": "ct",
+      "start": "2010Q1",
+      "end": "2021Q4",
+      "n": 48,
+      "adf_stat": -1.6130799326931002,
+      "adf_p": 0.7872684568766444,
+      "adf_lags": 0,
+      "adf_regression_n": 47,
+      "kpss_stat": 0.10541574035664594,
+      "kpss_p_tabulated": 0.1,
+      "kpss_p_display": ">=0.10 (table boundary)",
+      "kpss_lags": 4,
+      "evidence": "inconclusive: neither rejects",
+      "warnings": "The test statistic is outside of the range of p-values available in the\nlook-up table. The actual p-value is greater than the p-value returned.\n"
+    },
+    {
+      "series": "log_usdkzt",
+      "deterministic": "c",
+      "start": "2010Q1",
+      "end": "2021Q4",
+      "n": 48,
+      "adf_stat": -0.5040910909323741,
+      "adf_p": 0.89121567194232,
+      "adf_lags": 2,
+      "adf_regression_n": 45,
+      "kpss_stat": 0.9959132479573473,
+      "kpss_p_tabulated": 0.01,
+      "kpss_p_display": "<=0.01 (table boundary)",
+      "kpss_lags": 4,
+      "evidence": "supports nonstationarity",
+      "warnings": "The test statistic is outside of the range of p-values available in the\nlook-up table. The actual p-value is smaller than the p-value returned.\n"
+    },
+    {
+      "series": "log_usdkzt",
+      "deterministic": "ct",
+      "start": "2010Q1",
+      "end": "2021Q4",
+      "n": 48,
+      "adf_stat": -2.7568864342930315,
+      "adf_p": 0.21322958426785965,
+      "adf_lags": 1,
+      "adf_regression_n": 46,
+      "kpss_stat": 0.11187663221765641,
+      "kpss_p_tabulated": 0.1,
+      "kpss_p_display": ">=0.10 (table boundary)",
+      "kpss_lags": 4,
+      "evidence": "inconclusive: neither rejects",
+      "warnings": "The test statistic is outside of the range of p-values available in the\nlook-up table. The actual p-value is greater than the p-value returned.\n"
+    },
+    {
+      "series": "npl_change_pp",
+      "deterministic": "c",
+      "start": "2010Q2",
+      "end": "2021Q4",
+      "n": 47,
+      "adf_stat": -3.171479318110001,
+      "adf_p": 0.021696069602007265,
+      "adf_lags": 1,
+      "adf_regression_n": 45,
+      "kpss_stat": 0.10850004337450046,
+      "kpss_p_tabulated": 0.1,
+      "kpss_p_display": ">=0.10 (table boundary)",
+      "kpss_lags": 3,
+      "evidence": "supports stationarity",
+      "warnings": "The test statistic is outside of the range of p-values available in the\nlook-up table. The actual p-value is greater than the p-value returned.\n"
+    },
+    {
+      "series": "brent_log_change",
+      "deterministic": "c",
+      "start": "2010Q2",
+      "end": "2021Q4",
+      "n": 47,
+      "adf_stat": -5.82988245676216,
+      "adf_p": 3.998147836961482e-07,
+      "adf_lags": 0,
+      "adf_regression_n": 46,
+      "kpss_stat": 0.1080767429367711,
+      "kpss_p_tabulated": 0.1,
+      "kpss_p_display": ">=0.10 (table boundary)",
+      "kpss_lags": 2,
+      "evidence": "supports stationarity",
+      "warnings": "The test statistic is outside of the range of p-values available in the\nlook-up table. The actual p-value is greater than the p-value returned.\n"
+    },
+    {
+      "series": "usdkzt_log_change",
+      "deterministic": "c",
+      "start": "2010Q2",
+      "end": "2021Q4",
+      "n": 47,
+      "adf_stat": -4.87484080790687,
+      "adf_p": 3.9027746690763546e-05,
+      "adf_lags": 1,
+      "adf_regression_n": 45,
+      "kpss_stat": 0.10123480775800861,
+      "kpss_p_tabulated": 0.1,
+      "kpss_p_display": ">=0.10 (table boundary)",
+      "kpss_lags": 2,
+      "evidence": "supports stationarity",
+      "warnings": "The test statistic is outside of the range of p-values available in the\nlook-up table. The actual p-value is greater than the p-value returned.\n"
+    }
+  ],
+  "npl_mean_shift_screen": [
+    {
+      "first_post_quarter": "2012Q1",
+      "last_pre_quarter": "2011Q4",
+      "split_position": 8,
+      "n_before": 8,
+      "n_after": 40,
+      "mean_before_pct": 26.42375,
+      "mean_after_pct": 15.18475,
+      "split_sse": 4306.579785,
+      "sse_reduction_fraction": 0.1635566222596211
+    },
+    {
+      "first_post_quarter": "2012Q2",
+      "last_pre_quarter": "2012Q1",
+      "split_position": 9,
+      "n_before": 9,
+      "n_after": 39,
+      "mean_before_pct": 27.03222222222222,
+      "mean_after_pct": 14.756153846153843,
+      "split_sse": 4046.6732786324783,
+      "sse_reduction_fraction": 0.21403683786829364
+    },
+    {
+      "first_post_quarter": "2012Q3",
+      "last_pre_quarter": "2012Q2",
+      "split_position": 10,
+      "n_before": 10,
+      "n_after": 38,
+      "mean_before_pct": 27.419,
+      "mean_after_pct": 14.331315789473683,
+      "split_sse": 3792.654724210526,
+      "sse_reduction_fraction": 0.2633734688554811
+    },
+    {
+      "first_post_quarter": "2012Q4",
+      "last_pre_quarter": "2012Q3",
+      "split_position": 11,
+      "n_before": 11,
+      "n_after": 37,
+      "mean_before_pct": 27.73909090909091,
+      "mean_after_pct": 13.882432432432433,
+      "split_sse": 3520.6213719901716,
+      "sse_reduction_fraction": 0.31620901524005407
+    },
+    {
+      "first_post_quarter": "2013Q1",
+      "last_pre_quarter": "2012Q4",
+      "split_position": 12,
+      "n_before": 12,
+      "n_after": 36,
+      "mean_before_pct": 27.91,
+      "mean_after_pct": 13.440555555555555,
+      "split_sse": 3264.397188888889,
+      "sse_reduction_fraction": 0.3659740333916929
+    },
+    {
+      "first_post_quarter": "2013Q2",
+      "last_pre_quarter": "2013Q1",
+      "split_position": 13,
+      "n_before": 13,
+      "n_after": 35,
+      "mean_before_pct": 28.086153846153845,
+      "mean_after_pct": 12.961714285714285,
+      "split_sse": 2980.3338048351643,
+      "sse_reduction_fraction": 0.42114610689601795
+    },
+    {
+      "first_post_quarter": "2013Q3",
+      "last_pre_quarter": "2013Q2",
+      "split_position": 14,
+      "n_before": 14,
+      "n_after": 34,
+      "mean_before_pct": 28.222857142857144,
+      "mean_after_pct": 12.460588235294116,
+      "split_sse": 2684.89347394958,
+      "sse_reduction_fraction": 0.47852786240125655
+    },
+    {
+      "first_post_quarter": "2013Q4",
+      "last_pre_quarter": "2013Q3",
+      "split_position": 15,
+      "n_before": 15,
+      "n_after": 33,
+      "mean_before_pct": 28.314666666666668,
+      "mean_after_pct": 11.941212121212121,
+      "split_sse": 2384.0023248484845,
+      "sse_reduction_fraction": 0.5369683004404893
+    },
+    {
+      "first_post_quarter": "2014Q1",
+      "last_pre_quarter": "2013Q4",
+      "split_position": 16,
+      "n_before": 16,
+      "n_after": 32,
+      "mean_before_pct": 28.491875,
+      "mean_after_pct": 11.340937499999999,
+      "split_sse": 2011.0309156249998,
+      "sse_reduction_fraction": 0.6094084921717753
+    },
+    {
+      "first_post_quarter": "2014Q2",
+      "last_pre_quarter": "2014Q1",
+      "split_position": 17,
+      "n_before": 17,
+      "n_after": 31,
+      "mean_before_pct": 28.750588235294117,
+      "mean_after_pct": 10.645806451612906,
+      "split_sse": 1549.895048956357,
+      "sse_reduction_fraction": 0.6989723830480142
+    },
+    {
+      "first_post_quarter": "2014Q3",
+      "last_pre_quarter": "2014Q2",
+      "split_position": 18,
+      "n_before": 18,
+      "n_after": 30,
+      "mean_before_pct": 28.94388888888889,
+      "mean_after_pct": 9.926333333333336,
+      "split_sse": 1079.9221244444443,
+      "sse_reduction_fraction": 0.790252647213669
+    },
+    {
+      "first_post_quarter": "2014Q4",
+      "last_pre_quarter": "2014Q3",
+      "split_position": 19,
+      "n_before": 19,
+      "n_after": 29,
+      "mean_before_pct": 28.984736842105264,
+      "mean_after_pct": 9.243793103448276,
+      "split_sse": 675.1935564428313,
+      "sse_reduction_fraction": 0.8688608577631214
+    },
+    {
+      "first_post_quarter": "2015Q1",
+      "last_pre_quarter": "2014Q4",
+      "split_position": 20,
+      "n_before": 20,
+      "n_after": 28,
+      "mean_before_pct": 28.713,
+      "mean_after_pct": 8.732857142857142,
+      "split_sse": 491.27599142857144,
+      "sse_reduction_fraction": 0.9045821579564054
+    },
+    {
+      "first_post_quarter": "2015Q2",
+      "last_pre_quarter": "2015Q1",
+      "split_position": 21,
+      "n_before": 21,
+      "n_after": 27,
+      "mean_before_pct": 28.460952380952378,
+      "mean_after_pct": 8.188888888888888,
+      "split_sse": 294.2562476190476,
+      "sse_reduction_fraction": 0.9428482224950384
+    },
+    {
+      "first_post_quarter": "2015Q3",
+      "last_pre_quarter": "2015Q2",
+      "split_position": 22,
+      "n_before": 22,
+      "n_after": 26,
+      "mean_before_pct": 27.62090909090909,
+      "mean_after_pct": 8.12,
+      "split_sse": 616.9455818181817,
+      "sse_reduction_fraction": 0.8801740424883355
+    },
+    {
+      "first_post_quarter": "2015Q4",
+      "last_pre_quarter": "2015Q3",
+      "split_position": 23,
+      "n_before": 23,
+      "n_after": 25,
+      "mean_before_pct": 26.81869565217391,
+      "mean_after_pct": 8.078,
+      "split_sse": 941.4334608695651,
+      "sse_reduction_fraction": 0.8171505409767872
+    },
+    {
+      "first_post_quarter": "2016Q1",
+      "last_pre_quarter": "2015Q4",
+      "split_position": 24,
+      "n_before": 24,
+      "n_after": 24,
+      "mean_before_pct": 26.0325,
+      "mean_after_pct": 8.083333333333334,
+      "split_sse": 1282.6095833333331,
+      "sse_reduction_fraction": 0.7508857734524677
+    },
+    {
+      "first_post_quarter": "2016Q2",
+      "last_pre_quarter": "2016Q1",
+      "split_position": 25,
+      "n_before": 25,
+      "n_after": 23,
+      "mean_before_pct": 25.325599999999998,
+      "mean_after_pct": 8.071304347826086,
+      "split_sse": 1582.3542768695652,
+      "sse_reduction_fraction": 0.6926680051913368
+    },
+    {
+      "first_post_quarter": "2016Q3",
+      "last_pre_quarter": "2016Q2",
+      "split_position": 26,
+      "n_before": 26,
+      "n_after": 22,
+      "mean_before_pct": 24.655384615384612,
+      "mean_after_pct": 8.079090909090908,
+      "split_sse": 1874.2962279720277,
+      "sse_reduction_fraction": 0.6359657208090075
+    },
+    {
+      "first_post_quarter": "2016Q4",
+      "last_pre_quarter": "2016Q3",
+      "split_position": 27,
+      "n_before": 27,
+      "n_after": 21,
+      "mean_before_pct": 24.03333333333333,
+      "mean_after_pct": 8.08952380952381,
+      "split_sse": 2145.8832952380953,
+      "sse_reduction_fraction": 0.5832168539040297
+    },
+    {
+      "first_post_quarter": "2017Q1",
+      "last_pre_quarter": "2016Q4",
+      "split_position": 28,
+      "n_before": 28,
+      "n_after": 20,
+      "mean_before_pct": 23.415,
+      "mean_after_pct": 8.158,
+      "split_sse": 2432.96002,
+      "sse_reduction_fraction": 0.5274595157567481
+    },
+    {
+      "first_post_quarter": "2017Q2",
+      "last_pre_quarter": "2017Q1",
+      "split_position": 29,
+      "n_before": 29,
+      "n_after": 19,
+      "mean_before_pct": 22.872413793103448,
+      "mean_after_pct": 8.183157894736842,
+      "split_sse": 2671.7721415607984,
+      "sse_reduction_fraction": 0.4810763468440513
+    },
+    {
+      "first_post_quarter": "2017Q3",
+      "last_pre_quarter": "2017Q2",
+      "split_position": 30,
+      "n_before": 30,
+      "n_after": 18,
+      "mean_before_pct": 22.467,
+      "mean_after_pct": 8.04277777777778,
+      "split_sse": 2808.0259911111116,
+      "sse_reduction_fraction": 0.45461250875496007
+    },
+    {
+      "first_post_quarter": "2017Q4",
+      "last_pre_quarter": "2017Q3",
+      "split_position": 31,
+      "n_before": 31,
+      "n_after": 17,
+      "mean_before_pct": 22.153548387096773,
+      "mean_after_pct": 7.765882352941177,
+      "split_sse": 2875.938921442126,
+      "sse_reduction_fraction": 0.44142215267792284
+    },
+    {
+      "first_post_quarter": "2018Q1",
+      "last_pre_quarter": "2017Q4",
+      "split_position": 32,
+      "n_before": 32,
+      "n_after": 16,
+      "mean_before_pct": 21.752187499999998,
+      "mean_after_pct": 7.669375,
+      "split_sse": 3033.207440625,
+      "sse_reduction_fraction": 0.4108767505340378
+    },
+    {
+      "first_post_quarter": "2018Q2",
+      "last_pre_quarter": "2018Q1",
+      "split_position": 33,
+      "n_before": 33,
+      "n_after": 15,
+      "mean_before_pct": 21.396363636363635,
+      "mean_after_pct": 7.513333333333333,
+      "split_sse": 3161.064496969697,
+      "sse_reduction_fraction": 0.3860437755478562
+    },
+    {
+      "first_post_quarter": "2018Q3",
+      "last_pre_quarter": "2018Q2",
+      "split_position": 34,
+      "n_before": 34,
+      "n_after": 14,
+      "mean_before_pct": 21.02441176470588,
+      "mean_after_pct": 7.424999999999999,
+      "split_sse": 3314.6525882352944,
+      "sse_reduction_fraction": 0.3562132027377686
+    },
+    {
+      "first_post_quarter": "2018Q4",
+      "last_pre_quarter": "2018Q3",
+      "split_position": 35,
+      "n_before": 35,
+      "n_after": 13,
+      "mean_before_pct": 20.667142857142853,
+      "mean_after_pct": 7.340769230769229,
+      "split_sse": 3465.254206593407,
+      "sse_reduction_fraction": 0.3269626761850305
+    },
+    {
+      "first_post_quarter": "2019Q1",
+      "last_pre_quarter": "2018Q4",
+      "split_position": 36,
+      "n_before": 36,
+      "n_after": 12,
+      "mean_before_pct": 20.298055555555553,
+      "mean_after_pct": 7.3374999999999995,
+      "split_sse": 3636.896588888889,
+      "sse_reduction_fraction": 0.29362551742375664
+    },
+    {
+      "first_post_quarter": "2019Q2",
+      "last_pre_quarter": "2019Q1",
+      "split_position": 37,
+      "n_before": 37,
+      "n_after": 11,
+      "mean_before_pct": 19.98216216216216,
+      "mean_after_pct": 7.221818181818182,
+      "split_sse": 3768.048590663391,
+      "sse_reduction_fraction": 0.268152583253636
+    },
+    {
+      "first_post_quarter": "2019Q3",
+      "last_pre_quarter": "2019Q2",
+      "split_position": 38,
+      "n_before": 38,
+      "n_after": 10,
+      "mean_before_pct": 19.70315789473684,
+      "mean_after_pct": 7.006,
+      "split_sse": 3872.3728610526323,
+      "sse_reduction_fraction": 0.24789025224827244
+    },
+    {
+      "first_post_quarter": "2019Q4",
+      "last_pre_quarter": "2019Q3",
+      "split_position": 39,
+      "n_before": 39,
+      "n_after": 9,
+      "mean_before_pct": 19.437435897435897,
+      "mean_after_pct": 6.746666666666666,
+      "split_sse": 3970.9613435897436,
+      "sse_reduction_fraction": 0.22874195186687374
+    },
+    {
+      "first_post_quarter": "2020Q1",
+      "last_pre_quarter": "2019Q4",
+      "split_position": 40,
+      "n_before": 40,
+      "n_after": 8,
+      "mean_before_pct": 19.155,
+      "mean_after_pct": 6.5725,
+      "split_sse": 4093.2185499999996,
+      "sse_reduction_fraction": 0.204996605028281
+    }
+  ],
+  "best_descriptive_mean_split": {
+    "first_post_quarter": "2015Q2",
+    "last_pre_quarter": "2015Q1",
+    "split_position": 21,
+    "n_before": 21,
+    "n_after": 27,
+    "mean_before_pct": 28.460952380952378,
+    "mean_after_pct": 8.188888888888888,
+    "split_sse": 294.2562476190476,
+    "sse_reduction_fraction": 0.9428482224950384
+  },
+  "zivot_andrews": [
+    {
+      "series": "npl",
+      "deterministic": "c",
+      "n": 48,
+      "statistic": -6.130163093481696,
+      "p_value": 0.0006900150524442219,
+      "critical_5pct": -4.81067,
+      "lags": 2,
+      "reported_break_index": 20,
+      "reported_break_quarter": "2015Q1",
+      "following_quarter": "2015Q2",
+      "reject_unit_root_with_one_break": true
+    },
+    {
+      "series": "npl",
+      "deterministic": "ct",
+      "n": 48,
+      "statistic": -5.9644253293317275,
+      "p_value": 0.002919669614429876,
+      "critical_5pct": -5.07332,
+      "lags": 2,
+      "reported_break_index": 20,
+      "reported_break_quarter": "2015Q1",
+      "following_quarter": "2015Q2",
+      "reject_unit_root_with_one_break": true
+    }
+  ],
+  "level_correlations": {
+    "npl": {
+      "npl": 1.0,
+      "brent": 0.8513007672251812,
+      "usdkzt": -0.9130820563279005
+    },
+    "brent": {
+      "npl": 0.8513007672251812,
+      "brent": 1.0,
+      "usdkzt": -0.7450136220107116
+    },
+    "usdkzt": {
+      "npl": -0.9130820563279005,
+      "brent": -0.7450136220107116,
+      "usdkzt": 1.0
+    }
+  },
+  "change_correlations": {
+    "npl_change_pp": {
+      "npl_change_pp": 1.0,
+      "brent_log_change": -0.06053174939354733,
+      "usdkzt_log_change": 0.0003187926946706113
+    },
+    "brent_log_change": {
+      "npl_change_pp": -0.06053174939354733,
+      "brent_log_change": 1.0,
+      "usdkzt_log_change": -0.42060249474900707
+    },
+    "usdkzt_log_change": {
+      "npl_change_pp": 0.0003187926946706113,
+      "brent_log_change": -0.42060249474900707,
+      "usdkzt_log_change": 1.0
+    }
+  },
+  "lagged_correlations": [
+    {
+      "target": "npl",
+      "macro": "brent_log_change",
+      "lag": 0,
+      "n": 47,
+      "start": "2010Q2",
+      "end": "2021Q4",
+      "pearson_correlation": -0.1032286748018466
+    },
+    {
+      "target": "npl",
+      "macro": "brent_log_change",
+      "lag": 1,
+      "n": 46,
+      "start": "2010Q3",
+      "end": "2021Q4",
+      "pearson_correlation": -0.01863989155082613
+    },
+    {
+      "target": "npl",
+      "macro": "brent_log_change",
+      "lag": 2,
+      "n": 45,
+      "start": "2010Q4",
+      "end": "2021Q4",
+      "pearson_correlation": 0.06288097151790553
+    },
+    {
+      "target": "npl",
+      "macro": "brent_log_change",
+      "lag": 3,
+      "n": 44,
+      "start": "2011Q1",
+      "end": "2021Q4",
+      "pearson_correlation": 0.11771982563402358
+    },
+    {
+      "target": "npl",
+      "macro": "brent_log_change",
+      "lag": 4,
+      "n": 43,
+      "start": "2011Q2",
+      "end": "2021Q4",
+      "pearson_correlation": 0.21048456781400843
+    },
+    {
+      "target": "npl",
+      "macro": "usdkzt_log_change",
+      "lag": 0,
+      "n": 47,
+      "start": "2010Q2",
+      "end": "2021Q4",
+      "pearson_correlation": -0.1221682218035044
+    },
+    {
+      "target": "npl",
+      "macro": "usdkzt_log_change",
+      "lag": 1,
+      "n": 46,
+      "start": "2010Q3",
+      "end": "2021Q4",
+      "pearson_correlation": -0.1459958855258428
+    },
+    {
+      "target": "npl",
+      "macro": "usdkzt_log_change",
+      "lag": 2,
+      "n": 45,
+      "start": "2010Q4",
+      "end": "2021Q4",
+      "pearson_correlation": -0.1670507281577118
+    },
+    {
+      "target": "npl",
+      "macro": "usdkzt_log_change",
+      "lag": 3,
+      "n": 44,
+      "start": "2011Q1",
+      "end": "2021Q4",
+      "pearson_correlation": -0.18191214871944522
+    },
+    {
+      "target": "npl",
+      "macro": "usdkzt_log_change",
+      "lag": 4,
+      "n": 43,
+      "start": "2011Q2",
+      "end": "2021Q4",
+      "pearson_correlation": -0.23824628625314273
+    },
+    {
+      "target": "npl_change_pp",
+      "macro": "brent_log_change",
+      "lag": 0,
+      "n": 47,
+      "start": "2010Q2",
+      "end": "2021Q4",
+      "pearson_correlation": -0.06053174939354732
+    },
+    {
+      "target": "npl_change_pp",
+      "macro": "brent_log_change",
+      "lag": 1,
+      "n": 46,
+      "start": "2010Q3",
+      "end": "2021Q4",
+      "pearson_correlation": 0.2870099989425264
+    },
+    {
+      "target": "npl_change_pp",
+      "macro": "brent_log_change",
+      "lag": 2,
+      "n": 45,
+      "start": "2010Q4",
+      "end": "2021Q4",
+      "pearson_correlation": 0.28984368180426745
+    },
+    {
+      "target": "npl_change_pp",
+      "macro": "brent_log_change",
+      "lag": 3,
+      "n": 44,
+      "start": "2011Q1",
+      "end": "2021Q4",
+      "pearson_correlation": 0.12210808359451171
+    },
+    {
+      "target": "npl_change_pp",
+      "macro": "brent_log_change",
+      "lag": 4,
+      "n": 43,
+      "start": "2011Q2",
+      "end": "2021Q4",
+      "pearson_correlation": 0.09830231800398656
+    },
+    {
+      "target": "npl_change_pp",
+      "macro": "usdkzt_log_change",
+      "lag": 0,
+      "n": 47,
+      "start": "2010Q2",
+      "end": "2021Q4",
+      "pearson_correlation": 0.00031879269467061024
+    },
+    {
+      "target": "npl_change_pp",
+      "macro": "usdkzt_log_change",
+      "lag": 1,
+      "n": 46,
+      "start": "2010Q3",
+      "end": "2021Q4",
+      "pearson_correlation": -0.06951356897194337
+    },
+    {
+      "target": "npl_change_pp",
+      "macro": "usdkzt_log_change",
+      "lag": 2,
+      "n": 45,
+      "start": "2010Q4",
+      "end": "2021Q4",
+      "pearson_correlation": -0.024228486445270335
+    },
+    {
+      "target": "npl_change_pp",
+      "macro": "usdkzt_log_change",
+      "lag": 3,
+      "n": 44,
+      "start": "2011Q1",
+      "end": "2021Q4",
+      "pearson_correlation": -0.05126897812951131
+    },
+    {
+      "target": "npl_change_pp",
+      "macro": "usdkzt_log_change",
+      "lag": 4,
+      "n": 43,
+      "start": "2011Q2",
+      "end": "2021Q4",
+      "pearson_correlation": -0.1478035227306599
+    }
+  ],
+  "vif": [
+    {
+      "candidate": "compact_one_lag",
+      "predictor": "npl_lag1",
+      "n": 45,
+      "vif": 1.042466972326343,
+      "advisory_vif_above_5": false
+    },
+    {
+      "candidate": "compact_one_lag",
+      "predictor": "brent_log_change_lag1",
+      "n": 45,
+      "vif": 1.2448257293478746,
+      "advisory_vif_above_5": false
+    },
+    {
+      "candidate": "compact_one_lag",
+      "predictor": "usdkzt_log_change_lag1",
+      "n": 45,
+      "vif": 1.253285293289567,
+      "advisory_vif_above_5": false
+    },
+    {
+      "candidate": "two_npl_lags",
+      "predictor": "npl_lag1",
+      "n": 45,
+      "vif": 16.814460680281133,
+      "advisory_vif_above_5": true
+    },
+    {
+      "candidate": "two_npl_lags",
+      "predictor": "npl_lag2",
+      "n": 45,
+      "vif": 16.747174855173018,
+      "advisory_vif_above_5": true
+    },
+    {
+      "candidate": "two_npl_lags",
+      "predictor": "brent_log_change_lag1",
+      "n": 45,
+      "vif": 1.2466727455782087,
+      "advisory_vif_above_5": false
+    },
+    {
+      "candidate": "two_npl_lags",
+      "predictor": "usdkzt_log_change_lag1",
+      "n": 45,
+      "vif": 1.2533096157015617,
+      "advisory_vif_above_5": false
+    },
+    {
+      "candidate": "two_macro_lags",
+      "predictor": "npl_lag1",
+      "n": 45,
+      "vif": 1.0562228381543068,
+      "advisory_vif_above_5": false
+    },
+    {
+      "candidate": "two_macro_lags",
+      "predictor": "brent_log_change_lag1",
+      "n": 45,
+      "vif": 1.2959130349246784,
+      "advisory_vif_above_5": false
+    },
+    {
+      "candidate": "two_macro_lags",
+      "predictor": "brent_log_change_lag2",
+      "n": 45,
+      "vif": 1.2395205990365041,
+      "advisory_vif_above_5": false
+    },
+    {
+      "candidate": "two_macro_lags",
+      "predictor": "usdkzt_log_change_lag1",
+      "n": 45,
+      "vif": 1.6318262193875577,
+      "advisory_vif_above_5": false
+    },
+    {
+      "candidate": "two_macro_lags",
+      "predictor": "usdkzt_log_change_lag2",
+      "n": 45,
+      "vif": 1.6028109376365836,
+      "advisory_vif_above_5": false
+    }
+  ],
+  "condition_numbers": [
+    {
+      "candidate": "compact_one_lag",
+      "n": 45,
+      "predictors": 3,
+      "standardized_condition_number": 1.635201032198184
+    },
+    {
+      "candidate": "two_npl_lags",
+      "n": 45,
+      "predictors": 4,
+      "standardized_condition_number": 8.135690230602522
+    },
+    {
+      "candidate": "two_macro_lags",
+      "n": 45,
+      "predictors": 5,
+      "standardized_condition_number": 2.314135972767606
+    }
+  ],
+  "candidate_predictors": {
+    "compact_one_lag": [
+      "npl_lag1",
+      "brent_log_change_lag1",
+      "usdkzt_log_change_lag1"
+    ],
+    "two_npl_lags": [
+      "npl_lag1",
+      "npl_lag2",
+      "brent_log_change_lag1",
+      "usdkzt_log_change_lag1"
+    ],
+    "two_macro_lags": [
+      "npl_lag1",
+      "brent_log_change_lag1",
+      "brent_log_change_lag2",
+      "usdkzt_log_change_lag1",
+      "usdkzt_log_change_lag2"
+    ]
+  },
+  "decisions_for_validation": [
+    {
+      "topic": "sample",
+      "next_step": "Use pre-2022 rolling validation; reserve 2022 onward for final testing."
+    },
+    {
+      "topic": "NPL transformation",
+      "next_step": "Compare NPL levels and percentage-point changes; do not decide from one p-value."
+    },
+    {
+      "topic": "macro transformation",
+      "next_step": "Consider log changes; retain level alternatives only with a defensible specification."
+    },
+    {
+      "topic": "break handling",
+      "next_step": "Review training break evidence; validate any intervention or window choice inside folds."
+    },
+    {
+      "topic": "lag range",
+      "next_step": "Start compact (1–2 lags); four-quarter macro exploration is not a four-lag model recommendation."
+    },
+    {
+      "topic": "collinearity",
+      "next_step": "Use VIF as a precision warning, not a causal test or automatic drop rule."
+    },
+    {
+      "topic": "models",
+      "next_step": "Next notebook: persistence, NPL-only AR, and a small autoregression with macro predictors."
+    }
+  ],
+  "figures": [
+    "../reports/figures/02_training_series.png",
+    "../reports/figures/02_candidate_transformations.png",
+    "../reports/figures/02_npl_break_screen.png",
+    "../reports/figures/02_acf_pacf_levels.png",
+    "../reports/figures/02_acf_pacf_changes.png",
+    "../reports/figures/02_correlation_heatmaps.png",
+    "../reports/figures/02_lagged_correlations.png"
+  ],
+  "forecast_models_fitted": false
+}

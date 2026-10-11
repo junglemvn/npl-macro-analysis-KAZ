@@ -1,0 +1,248 @@
+{
+  "status": "stress_scenario_completed_final_interpretation_pending",
+  "model": "ARX2_oil2_fx4",
+  "parameter_policy": "fixed coefficients estimated through 2021Q4; no scenario refitting",
+  "fixed_protocol_sha256": "8f6bf99964014ab72a0c8d3a7b3cae8b0815df9bd6e5239b70ee06a90e12b633",
+  "scenario_origin": "2026Q2",
+  "origin_values": {
+    "npl": 4.12,
+    "brent": 97.05,
+    "usdkzt": 476.0
+  },
+  "horizon_quarters": 4,
+  "shock_start": "2026Q3",
+  "year_ahead_quarter": "2027Q2",
+  "assumptions": {
+    "baseline": "oil and USD/KZT stay at observed origin levels",
+    "stress_brent_usd": 45.0,
+    "stress_usdkzt_multiplier": 1.3,
+    "depreciation_definition": "30% increase in KZT per USD",
+    "duration": "new macro levels persist throughout all four future quarters",
+    "shock_changes": "one initial log change; subsequent changes zero",
+    "npl_history": "actual history through origin, then recursive predictions only",
+    "prediction_clipping": false,
+    "future_actuals_used": false,
+    "uncertainty_intervals": "not computed"
+  },
+  "coefficients": {
+    "const": -0.1868741463875131,
+    "npl_change_pp_lag_1": -0.036707530706432095,
+    "npl_change_pp_lag_2": 0.3413312692830569,
+    "brent_log_change_pct_lag_2": 0.05690160371058729,
+    "usdkzt_log_change_pct_lag_4": -0.06474342209374029
+  },
+  "macro_assumptions": [
+    {
+      "path": "Baseline",
+      "future_brent_usd": 97.05,
+      "future_usdkzt": 476.0,
+      "initial_brent_log_change_pct": 0.0,
+      "initial_usdkzt_log_change_pct": 0.0
+    },
+    {
+      "path": "Stress",
+      "future_brent_usd": 45.0,
+      "future_usdkzt": 618.8000000000001,
+      "initial_brent_log_change_pct": -76.85638198446996,
+      "initial_usdkzt_log_change_pct": 26.236426446749107
+    }
+  ],
+  "recursive_forecasts": [
+    {
+      "path": "Baseline",
+      "quarter": "2026Q3",
+      "scenario_origin_quarter": "2026Q2",
+      "horizon_quarters": 1,
+      "previous_npl_source": "observed origin",
+      "previous_npl": 4.12,
+      "predicted_change_pp": 0.8350543342267737,
+      "predicted_npl": 4.955054334226774,
+      "brent_usd": 97.05,
+      "usdkzt": 476.0,
+      "oil_source_quarter": "2026Q1",
+      "fx_source_quarter": "2025Q3",
+      "oil_predictor_log_change_pct": 20.847024179690532,
+      "fx_predictor_log_change_pct": 4.245174580914579,
+      "npl_within_0_100": true
+    },
+    {
+      "path": "Baseline",
+      "quarter": "2026Q4",
+      "scenario_origin_quarter": "2026Q2",
+      "horizon_quarters": 2,
+      "previous_npl_source": "previous prediction",
+      "previous_npl": 4.955054334226774,
+      "predicted_change_pp": 1.2294967757194328,
+      "predicted_npl": 6.184551109946207,
+      "brent_usd": 97.05,
+      "usdkzt": 476.0,
+      "oil_source_quarter": "2026Q2",
+      "fx_source_quarter": "2025Q4",
+      "oil_predictor_log_change_pct": 22.108487843067337,
+      "fx_predictor_log_change_pct": -2.1286425089418692,
+      "npl_within_0_100": true
+    },
+    {
+      "path": "Baseline",
+      "quarter": "2027Q1",
+      "scenario_origin_quarter": "2026Q2",
+      "horizon_quarters": 3,
+      "previous_npl_source": "previous prediction",
+      "previous_npl": 6.184551109946207,
+      "predicted_change_pp": 0.3954085016117956,
+      "predicted_npl": 6.579959611558002,
+      "brent_usd": 97.05,
+      "usdkzt": 476.0,
+      "oil_source_quarter": "2026Q3",
+      "fx_source_quarter": "2026Q1",
+      "oil_predictor_log_change_pct": 0.0,
+      "fx_predictor_log_change_pct": -5.2883253889455695,
+      "npl_within_0_100": true
+    },
+    {
+      "path": "Baseline",
+      "quarter": "2027Q2",
+      "scenario_origin_quarter": "2026Q2",
+      "horizon_quarters": 4,
+      "previous_npl_source": "previous prediction",
+      "previous_npl": 6.579959611558002,
+      "predicted_change_pp": 0.5072911136416981,
+      "predicted_npl": 7.0872507251997,
+      "brent_usd": 97.05,
+      "usdkzt": 476.0,
+      "oil_source_quarter": "2026Q4",
+      "fx_source_quarter": "2026Q2",
+      "oil_predictor_log_change_pct": 0.0,
+      "fx_predictor_log_change_pct": -4.463990709195365,
+      "npl_within_0_100": true
+    },
+    {
+      "path": "Stress",
+      "quarter": "2026Q3",
+      "scenario_origin_quarter": "2026Q2",
+      "horizon_quarters": 1,
+      "previous_npl_source": "observed origin",
+      "previous_npl": 4.12,
+      "predicted_change_pp": 0.8350543342267737,
+      "predicted_npl": 4.955054334226774,
+      "brent_usd": 45.0,
+      "usdkzt": 618.8000000000001,
+      "oil_source_quarter": "2026Q1",
+      "fx_source_quarter": "2025Q3",
+      "oil_predictor_log_change_pct": 20.847024179690532,
+      "fx_predictor_log_change_pct": 4.245174580914579,
+      "npl_within_0_100": true
+    },
+    {
+      "path": "Stress",
+      "quarter": "2026Q4",
+      "scenario_origin_quarter": "2026Q2",
+      "horizon_quarters": 2,
+      "previous_npl_source": "previous prediction",
+      "previous_npl": 4.955054334226774,
+      "predicted_change_pp": 1.2294967757194328,
+      "predicted_npl": 6.184551109946207,
+      "brent_usd": 45.0,
+      "usdkzt": 618.8000000000001,
+      "oil_source_quarter": "2026Q2",
+      "fx_source_quarter": "2025Q4",
+      "oil_predictor_log_change_pct": 22.108487843067337,
+      "fx_predictor_log_change_pct": -2.1286425089418692,
+      "npl_within_0_100": true
+    },
+    {
+      "path": "Stress",
+      "quarter": "2027Q1",
+      "scenario_origin_quarter": "2026Q2",
+      "horizon_quarters": 3,
+      "previous_npl_source": "previous prediction",
+      "previous_npl": 6.184551109946207,
+      "predicted_change_pp": -3.9778428886980377,
+      "predicted_npl": 2.206708221248169,
+      "brent_usd": 45.0,
+      "usdkzt": 618.8000000000001,
+      "oil_source_quarter": "2026Q3",
+      "fx_source_quarter": "2026Q1",
+      "oil_predictor_log_change_pct": -76.85638198447,
+      "fx_predictor_log_change_pct": -5.2883253889455695,
+      "npl_within_0_100": true
+    },
+    {
+      "path": "Stress",
+      "quarter": "2027Q2",
+      "scenario_origin_quarter": "2026Q2",
+      "horizon_quarters": 4,
+      "previous_npl_source": "previous prediction",
+      "previous_npl": 2.206708221248169,
+      "predicted_change_pp": 0.6678223733384432,
+      "predicted_npl": 2.874530594586612,
+      "brent_usd": 45.0,
+      "usdkzt": 618.8000000000001,
+      "oil_source_quarter": "2026Q4",
+      "fx_source_quarter": "2026Q2",
+      "oil_predictor_log_change_pct": 0.0,
+      "fx_predictor_log_change_pct": -4.463990709195365,
+      "npl_within_0_100": true
+    }
+  ],
+  "quarterly_comparison": [
+    {
+      "quarter": "2026Q3",
+      "baseline_npl_pct": 4.955054334226774,
+      "stress_npl_pct": 4.955054334226774,
+      "stress_minus_baseline_pp": 0.0,
+      "baseline_within_0_100": true,
+      "stress_within_0_100": true
+    },
+    {
+      "quarter": "2026Q4",
+      "baseline_npl_pct": 6.184551109946207,
+      "stress_npl_pct": 6.184551109946207,
+      "stress_minus_baseline_pp": 0.0,
+      "baseline_within_0_100": true,
+      "stress_within_0_100": true
+    },
+    {
+      "quarter": "2027Q1",
+      "baseline_npl_pct": 6.579959611558002,
+      "stress_npl_pct": 2.206708221248169,
+      "stress_minus_baseline_pp": -4.373251390309833,
+      "baseline_within_0_100": true,
+      "stress_within_0_100": true
+    },
+    {
+      "quarter": "2027Q2",
+      "baseline_npl_pct": 7.0872507251997,
+      "stress_npl_pct": 2.874530594586612,
+      "stress_minus_baseline_pp": -4.212720130613088,
+      "baseline_within_0_100": true,
+      "stress_within_0_100": true
+    }
+  ],
+  "year_ahead_comparison": [
+    {
+      "quarter": "2027Q2",
+      "origin_npl_pct": 4.12,
+      "baseline_npl_pct": 7.0872507251997,
+      "stress_npl_pct": 2.874530594586612,
+      "stress_minus_baseline_pp": -4.212720130613088,
+      "stress_minus_origin_pp": -1.2454694054133881
+    }
+  ],
+  "oil_first_new_shock_effect_quarter": "2027Q1",
+  "fx_first_new_shock_effect_quarter": "2027Q3",
+  "new_fx_shock_enters_within_horizon": false,
+  "oil_extrapolation_check": [
+    {
+      "predictor": "brent_log_change_pct_lag_2",
+      "training_min": -42.73919124979537,
+      "training_max": 29.881309896125117,
+      "stress_initial_change": -76.85638198446996,
+      "outside_training_range": true
+    }
+  ],
+  "all_npl_predictions_within_0_100": true,
+  "causal_economic_interpretation_supported": false,
+  "stress_scenario_performed": true,
+  "final_assignment_interpretation_written": false
+}

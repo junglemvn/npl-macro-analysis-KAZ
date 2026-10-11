@@ -66,9 +66,10 @@ dbk-task/
 │   └── processed/
 │       ├── train.csv
 │       └── test.csv
-├── notebooks/              # six sequential analysis notebooks
-├── docs/data_sources.md    # sources and data caveats
 ├── diagnostics/            # model definitions and evaluation results
+├── docs/data_sources.md    # sources and data caveats
+├── notebooks/              # six sequential analysis notebooks
+├── .gitignore
 ├── README.md
 └── requirements.txt
 ```

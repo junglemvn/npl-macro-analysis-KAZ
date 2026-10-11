@@ -68,7 +68,7 @@ dbk-task/
 │       └── test.csv
 ├── notebooks/              # six sequential analysis notebooks
 ├── docs/data_sources.md    # sources and data caveats
-├── reports/diagnostics/    # model definitions and evaluation results
+├── diagnostics/            # model definitions and evaluation results
 ├── README.md
 └── requirements.txt
 ```
